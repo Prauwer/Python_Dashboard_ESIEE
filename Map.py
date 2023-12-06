@@ -3,6 +3,30 @@ import numpy as np
 
 
 def getMap(dataFrame):
+    """
+    Crée une carte choroplèthe interactive à partir d'un DataFrame de données de loyer.
+
+    Paramètres :
+    -----------
+    dataFrame : pd.DataFrame
+        Un DataFrame Pandas contenant les données de loyer.
+
+    Retour :
+    --------
+    folium.folium.Map
+        Une carte choroplèthe interactive créée avec Folium.
+
+    Notes :
+    ------
+    La fonction groupe les données par département, calcule la moyenne du loyer par département,
+    puis crée une carte choroplèthe interactive avec Folium. La couleur des départements est basée sur
+    le logarithme naturel du loyer moyen par mètre carré. La légende affiche le prix du loyer en €/m².
+
+    Exemple :
+    --------
+    >>> map = getMap(dataFrame)
+
+    """
     groupedData = dataFrame.groupby("DEP")["loypredm2"].mean().reset_index()
     groupedData['loypredm2_log'] = np.log1p(groupedData['loypredm2'])
 

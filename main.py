@@ -2,6 +2,8 @@ import dash
 from dash import dcc
 from dash import html
 
+import pydoc
+
 from Histogramme import getHistogramme
 from Map import getMap
 from Data import getDataFrame
