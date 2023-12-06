@@ -1,31 +1,13 @@
-from io import StringIO
-
-
 import dash
 from dash import dcc
 from dash import html
-import pandas as pd
-import requests
 
 from Histogramme import getHistogramme
 from Map import getMap
-
+from Data import getDataFrame
 # faire le nombre de communes par tranche de loyer.
 
 # Main
-
-def getDataFrame():
-    # fetching csv
-    response = requests.get("https://www.data.gouv.fr/fr/datasets/r/bc9d5d13-07cc-4d38-8254-88db065bd42b").text
-
-    # create dataframe
-    csv_buffer = StringIO(response)
-    dataFrame = pd.read_csv(csv_buffer, sep=";", encoding="latin-1")
-
-    # Convertir la colonne 'loypredm2' en float
-    dataFrame["loypredm2"] = dataFrame["loypredm2"].str.replace(",", ".").astype(float)
-
-    return dataFrame
 
 if __name__ == "__main__":
     app = dash.Dash(__name__)

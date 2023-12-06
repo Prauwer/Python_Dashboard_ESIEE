@@ -1,5 +1,3 @@
-import requests
-from io import StringIO
 import pandas as pd
 import plotly_express as px
 
@@ -27,6 +25,9 @@ def getHistogramme(dataFrame):
     )
     # Ajouter les étiquettes de texte
     hist.update_traces(texttemplate='%{y}', textposition='outside')
+
+    # Renommer la légende "count" sur l'axe y
+    hist.update_layout(yaxis_title_text='Nombre de communes')
 
     # Ajuster la marge supérieure
     hist.update_layout(margin=dict(t=10))
