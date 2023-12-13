@@ -8,12 +8,18 @@ from Map import getMap
 app = dash.Dash(__name__)
 
 # URLs utilisé pour les données de loyers (maison, appartement T3 et plus, appartement T1 et T2, tous les appartements).
-DATA_URL = {
+DATA_URLS = {
     "maison": "https://www.data.gouv.fr/fr/datasets/r/dfb542cd-a808-41e2-9157-8d39b5c24edb",
     "appartementT3et+": "https://www.data.gouv.fr/fr/datasets/r/b398ede4-75f9-47ac-bfc5-d912c0012880",
     "appartementT1etT2": "https://www.data.gouv.fr/fr/datasets/r/7141612b-8029-44a4-a048-921a85a47b1f",
     "appartement": "https://www.data.gouv.fr/fr/datasets/r/bc9d5d13-07cc-4d38-8254-88db065bd42b",
 }
+
+histograms = {}
+maps = {}
+for data_name, data_url in DATA_URLS.items():
+    histograms[data_name] = getHistogramme(data_url)
+    maps[data_name] = getMap(data_url)
 
 # Création du layout du dashboard.
 # Ici, on créer un objet Graph (l'histogramme ) et un objet Iframe (la carte), mais on les laisse vides.
@@ -38,13 +44,23 @@ app.layout = html.Div(
             id="data-source",
             options=[
                 {"label": "Maison", "value": "maison"},
-                {"label": "Appartement T3 et plus", "value": "appartementT3et+"},
                 {"label": "Appartement T1 et T2", "value": "appartementT1etT2"},
+                {"label": "Appartement T3 et plus", "value": "appartementT3et+"},
                 {"label": "Appartement", "value": "appartement"},
             ],
             value="maison",  # Valeur par défaut
             labelStyle={"cursor": "pointer"},
-            style={"display": "flex", "justify-content": "space-around", "padding": "1em", "background": "#427AA1", "color": "#ebf2fa", "cursor": "pointer"},
+            style={
+                "display": "flex", 
+                "justify-content": "space-around",
+                "padding": "1em", 
+                "background": "#427AA1", 
+                "color": "#ebf2fa", 
+                "cursor": "pointer",
+                "position": "sticky",
+                "z-index": "10",
+                "top": "0",
+            },
         ),
         html.Div(
             children=[
@@ -54,7 +70,7 @@ app.layout = html.Div(
                 ),
                 dcc.Graph(id="graph1"),
                 html.Div(
-                    children="Ce graphe montre le nombre de communes par tranche de loyer moyen.",
+                    children="Ce graphe montre le nombre de communes par tranche de loyer moyen. Les données contiennes les communes de métropole et d'outre-mer",
                     style={"color": "#2b2b2b", "padding": "0.5em"},
                 ),
             ],
@@ -101,8 +117,8 @@ def update_data_source(selected_source):
         histogram_figure Figure: histogramme généré
         map_src_doc Map : carte généré
     """
-    histogram_figure = getHistogramme(DATA_URL[selected_source])
-    map_src_doc = getMap(DATA_URL[selected_source])._repr_html_()
+    histogram_figure = histograms[selected_source]
+    map_src_doc = maps[selected_source]._repr_html_()
     return histogram_figure, map_src_doc
 
 # Main
