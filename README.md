@@ -12,10 +12,11 @@ Les liens utilisés pour accéder aux données du site sont statiques et ne sero
 Pour déployer le Dashboard, il est préférable que **Git** soit installé sur la machine cible. Ouvrez un terminal dans le dossier où vous voulez télécharger l'application puis tapez les trois commandes suivantes :
 ```bash
 git clone https://git.esiee.fr/mansouan/antoninzackarypythonminiproject.git
-cd antoninzackarypythonminiproject
+cd antoninzackarypythonminiproject$
+python -m pip install -r requirements.txt
 python main.py
 ```
-> **Note** : Télécharger le dossier directement fonctionnera également, mais il faudra l'extraire et ouvrir un terminal dedans pour y taper la commande `python main.py`
+> **Note** : Télécharger le dossier directement fonctionnera également, mais il faudra l'extraire et ouvrir un terminal dedans pour y taper les commandes `python -m pip install -r requirements.txt` et `python main.py`.
 
 L'application lancera un serveur local accessible à l'adresse http://127.0.0.1:8050/ contenant le Dashboard. Il est possible d'ouvrir la page en maintenant la touche **Ctrl** et en **cliquant** sur l'URL dans le Terminal.
 
