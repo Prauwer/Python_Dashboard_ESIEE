@@ -26,7 +26,7 @@ Pour déployer le Dashboard, il est préférable que **Git** soit installé sur 
 
 git clone https://git.esiee.fr/mansouan/antoninzackarypythonminiproject.git
 
-cd antoninzackarypythonminiproject$
+cd antoninzackarypythonminiproject
 
 python -m pip install -r requirements.txt
 #cette ligne peut prendre un peu de temps à se terminer, veuillez bien patienter le téléchargement avant de lancer la suivante
