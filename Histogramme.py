@@ -1,8 +1,11 @@
 import pandas as pd
 import plotly_express as px
+from Data import getDataFrame
 
-def getHistogramme(dataFrame):
+def getHistogramme(url: str):
     """Génère l'histogramme du dataFrame du nombre de communes par tranche de loyers moyens.
+    # Récupérer le DataFrame
+    dataFrame = getDataFrame(url)
 
     Args:
         url (str): URL pour récupérer les données en CSV
