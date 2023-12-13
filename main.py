@@ -12,7 +12,7 @@ DATA_URL = {
     "maison": "https://www.data.gouv.fr/fr/datasets/r/dfb542cd-a808-41e2-9157-8d39b5c24edb",
     "appartementT3et+": "https://www.data.gouv.fr/fr/datasets/r/b398ede4-75f9-47ac-bfc5-d912c0012880",
     "appartementT1etT2": "https://www.data.gouv.fr/fr/datasets/r/7141612b-8029-44a4-a048-921a85a47b1f",
-    "appartement": "https://www.data.gouv.fr/fr/datasets/r/bc9d5d13-07cc-4d38-8254-88db065bd42b",
+    "appartements": "https://www.data.gouv.fr/fr/datasets/r/bc9d5d13-07cc-4d38-8254-88db065bd42b",
 }
 
 # Création du layout du dashboard.
@@ -40,7 +40,7 @@ app.layout = html.Div(
                 {"label": "Maison", "value": "maison"},
                 {"label": "Appartement T3 et plus", "value": "appartementT3et+"},
                 {"label": "Appartement T1 et T2", "value": "appartementT1etT2"},
-                {"label": "Appartement", "value": "appartement"},
+                {"label": "Appartements (global)", "value": "appartements"},
             ],
             value="maison",  # Valeur par défaut
             labelStyle={"cursor": "pointer"},
@@ -92,7 +92,7 @@ app.layout = html.Div(
     [Input("data-source", "value")], # On récupère la valeur sélectionné dans l'objet d'id data-source (un radio bouton)
 )
 def update_data_source(selected_source):
-    """Récupère la source de données choisis (appartement, maison, T1 et T2, T3 et +) et on remplit les objets Graph et Iframe.
+    """Récupère la source de données choisis (appartements, maison, T1 et T2, T3 et +) et on remplit les objets Graph et Iframe.
 
     Args:
         selected_source (str): source de données choisit dans le radio bouton
