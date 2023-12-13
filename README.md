@@ -28,7 +28,8 @@ git clone https://git.esiee.fr/mansouan/antoninzackarypythonminiproject.git
 
 cd antoninzackarypythonminiproject$
 
-python -m pip install -r requirements.txt #celle-ci peut prendre un peu de temps à se terminer
+python -m pip install -r requirements.txt
+#cette ligne peut prendre un peu de temps à se terminer, veuillez bien patienter le téléchargement avant de lancer la suivante
 
 python main.py
 
