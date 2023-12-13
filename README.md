@@ -29,9 +29,8 @@ Ces informations démontrent que le prix du loyer réduit considérablement lors
 
 Nous remarquons également grâce à la carte que les régions où le loyer est le plus élevé sont l'**Ile de France** et la **Haute Savoie**, tandis que les loyers les moins chers sont situés dans la **[diagonale du vide](https://fr.wikipedia.org/wiki/Diagonale_du_vide)**.
 
-## Guide développpeur
+## Guide développpeur (TODO : à terminer)
 On charge tout au début comme ça on change a volonté
-nettoyage de données : vérifier ID unique, convertir les noms en caractères utf-8 et vérifier unique
 
 ### Diagrammes
 #### (mermaid)
