@@ -8,7 +8,7 @@ Ce projet est un Dashboard représentant le **montant des loyers** des apparteme
 Le jeu de données est tiré du site du site **data.gouv.fr** : https://www.data.gouv.fr/fr/datasets/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2022/
 Les liens utilisés pour accéder aux données du site sont statiques et ne seront donc jamais soumis aux changements.
 
-## Guide utilisateur
+## Guide utilisateur (TODO : décrire l'utilisation cf https://perso.esiee.fr/~courivad/3IPR2/depot.html)
 Pour déployer le Dashboard, il est préférable que **Git** soit installé sur la machine cible. Ouvrez un terminal dans le dossier où vous voulez télécharger l'application puis tapez les trois commandes suivantes :
 ```bash
 git clone https://git.esiee.fr/mansouan/antoninzackarypythonminiproject.git
@@ -41,3 +41,4 @@ A[Square Rect] -- Link text --> B((Circle))
 A --> C(Round Rect)
 B --> D{Rhombus}
 C --> D
+```
