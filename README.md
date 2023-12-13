@@ -18,7 +18,7 @@ Les liens utilisés pour accéder aux données du site sont statiques et ne sero
 
   
 
-## Guide utilisateur
+## Guide utilisateur (TODO : décrire l'utilisation cf https://perso.esiee.fr/~courivad/3IPR2/depot.html ET TESTER REQUIREMENTS.TXT)
 
 Pour déployer le Dashboard, il est préférable que **Git** soit installé sur la machine cible. Ouvrez un terminal dans le dossier où vous voulez télécharger l'application puis tapez les quatre commandes suivantes :
 
