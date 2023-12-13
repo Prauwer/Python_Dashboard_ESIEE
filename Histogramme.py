@@ -4,7 +4,7 @@ import plotly_express as px
 from Data import getDataFrame
 
 
-def getHistogramme(url):
+def getHistogramme(url: str):
     
     # Récupérer le DataFrame
     dataFrame = getDataFrame(url)

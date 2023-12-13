@@ -4,7 +4,7 @@ import numpy as np
 from Data import getDataFrame
 
 
-def getMap(url):
+def getMap(url: str):
     
     # Récupérer le DataFrame
     dataFrame = getDataFrame(url)

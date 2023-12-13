@@ -2,7 +2,7 @@ import pandas as pd
 from io import StringIO
 import requests
 
-def getDataFrame(url):
+def getDataFrame(url: str):
     # fetching csv
     response = requests.get(url).text
 
