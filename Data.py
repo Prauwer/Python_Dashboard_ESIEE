@@ -2,9 +2,9 @@ import pandas as pd
 from io import StringIO
 import requests
 
-def getDataFrame():
+def getDataFrame(url):
     # fetching csv
-    response = requests.get("https://www.data.gouv.fr/fr/datasets/r/bc9d5d13-07cc-4d38-8254-88db065bd42b").text
+    response = requests.get(url).text
 
     # create dataframe
     csv_buffer = StringIO(response)

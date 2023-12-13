@@ -1,8 +1,13 @@
 import pandas as pd
 import plotly_express as px
 
+from Data import getDataFrame
 
-def getHistogramme(dataFrame):
+
+def getHistogramme(url):
+    
+    # Récupérer le DataFrame
+    dataFrame = getDataFrame(url)
 
     # Créer des tranches de prix de loyer
     tranches_prix = [0, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20, 25, 30, 35]

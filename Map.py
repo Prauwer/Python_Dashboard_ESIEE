@@ -1,8 +1,14 @@
 import folium
 import numpy as np
 
+from Data import getDataFrame
 
-def getMap(dataFrame):
+
+def getMap(url):
+    
+    # Récupérer le DataFrame
+    dataFrame = getDataFrame(url)
+    
     groupedData = dataFrame.groupby("DEP")["loypredm2"].mean().reset_index()
     groupedData['loypredm2_log'] = np.log1p(groupedData['loypredm2'])
 
