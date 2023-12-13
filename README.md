@@ -86,3 +86,5 @@ B --> D{Rhombus}
 C --> D
 
 ```
+
+*Nous déclarons sur l’honneur que l'entièreté code fourni a été produit par nous mêmes*
