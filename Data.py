@@ -2,7 +2,8 @@ import pandas as pd
 from io import StringIO
 import requests
 
-def getDataFrame(url):
+
+def getDataFrame():
     """Récupération des données CSV et création du dataFrame
 
     Args:
@@ -12,7 +13,7 @@ def getDataFrame(url):
         DataFrame: dataFrame des prix moyen du loyer par département
     """
     # Récupération du csv
-    response = requests.get(url).text
+    response = requests.get("https://www.data.gouv.fr/fr/datasets/r/bc9d5d13-07cc-4d38-8254-88db065bd42b").text
 
     # création du DataFrame
     csv_buffer = StringIO(response)

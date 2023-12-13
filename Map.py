@@ -1,10 +1,7 @@
 import folium
 import numpy as np
 
-from Data import getDataFrame
-
-
-def getMap(url):
+def getMap(dataFrame):
     """Génère la carte des départements français, coloré par prix moyen du loyer.
 
     Args:
@@ -13,9 +10,6 @@ def getMap(url):
     Returns:
         Map : carte généré.
     """
-    # Récupérer le DataFrame
-    dataFrame = getDataFrame(url)
-    
     
     # Regrouper les valeurs par communes en valeurs par département de France métropolitaine
     groupedData = dataFrame.groupby("DEP")["loypredm2"].mean().reset_index()
