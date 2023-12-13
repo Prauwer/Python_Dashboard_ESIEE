@@ -1,13 +1,39 @@
 # Mini Projet Python
+*Par Antonin MANSOUR et Zackary SAADA*
 
 ## Présentation générale
 
-Ce projet est un Dashboard représentant le montant des loyers des appartements en €/m2 en fonction des communes de France.
+Ce projet est un Dashboard représentant le **montant des loyers** des appartements et maisons en **€/m2** en **fonction des communes de France** en 2022.
 
-jeu de données : https://www.data.gouv.fr/fr/datasets/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2022/
+Le jeu de données est tiré du site du site **data.gouv.fr** : https://www.data.gouv.fr/fr/datasets/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2022/
+Les liens utilisés pour accéder aux données du site sont statiques et ne seront donc jamais soumis aux changements.
 
-## Définitions des variables du jeu de données
-[document de Définition des variables](https://file.notion.so/f/f/fcf0646e-563c-46d2-b020-29408e7b6607/2fe5d9fe-9b19-42e3-98af-3d897078d3c8/guide-dutilisation-des-donnees-dictionnaire-des-variables.pdf?id=dfec8a1a-0bd6-4680-91b8-35458c5ad0d6&table=block&spaceId=fcf0646e-563c-46d2-b020-29408e7b6607&expirationTimestamp=1697760000000&signature=mIQrEzvvsCuOpDefhNnOF_7F8zjtHcigjxhlGb0WpHw&downloadName=guide-dutilisation-des-donnees-dictionnaire-des-variables.pdf)
+## Guide utilisateur
+Pour déployer le Dashboard, il est préférable que **Git** soit installé sur la machine cible. Ouvrez un terminal dans le dossier où vous voulez télécharger l'application puis tapez les trois commandes suivantes :
+```bash
+git clone https://git.esiee.fr/mansouan/antoninzackarypythonminiproject.git
+cd antoninzackarypythonminiproject
+python main.py
+```
+> **Note** : Télécharger le dossier directement fonctionnera également, mais il faudra l'extraire et ouvrir un terminal dedans pour y taper la commande `python main.py`
+
+L'application lancera un serveur local accessible à l'adresse http://127.0.0.1:8050/ contenant le Dashboard. Il est possible d'ouvrir la page en maintenant la touche **Ctrl** et en **cliquant** sur l'URL dans le Terminal.
+
+Maintenir la touche **Ctrl** puis appuyer sur **C** ou **fermer la console** mettra fin au serveur.
+
+## Rapport d'analyse
+Nous remarquons qu'une grande partie des communes propose un loyer **maison** situé entre **6 et 9 €/m²**, avec un pic de communes entre 7 et 8 €/m².
+Cette fourchette augmente pour les **appartements**, jusqu'à atteindre des fourchettes de **9 à 12€/m²** pour les T1 et T2, avec un pic de communes à 10-11€/m².
+Ces informations démontrent que le prix du loyer réduit considérablement lorsque la taille du logement en m² augmente.
+
+Nous remarquons également grâce à la carte que les régions où le loyer est le plus élevé sont l'**Ile de France** et la **Haute Savoie**, tandis que les loyers les moins chers sont situés dans la **[diagonale du vide](https://fr.wikipedia.org/wiki/Diagonale_du_vide)**.
+
+## Guide développpeur
+On charge tout au début comme ça on change a volonté
+nettoyage de données : vérifier ID unique, convertir les noms en caractères utf-8 et vérifier unique
+
+### Diagrammes
+#### (mermaid)
 
 ```mermaid
 graph LR
@@ -15,4 +41,3 @@ A[Square Rect] -- Link text --> B((Circle))
 A --> C(Round Rect)
 B --> D{Rhombus}
 C --> D
-```
