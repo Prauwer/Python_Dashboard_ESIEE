@@ -1,10 +1,13 @@
-import requests
-from io import StringIO
 import pandas as pd
 import plotly_express as px
 
+from Data import getDataFrame
 
-def getHistogramme(dataFrame):
+
+def getHistogramme(url: str):
+    
+    # Récupérer le DataFrame
+    dataFrame = getDataFrame(url)
 
     # Créer des tranches de prix de loyer
     tranches_prix = [0, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20, 25, 30, 35]
@@ -27,6 +30,9 @@ def getHistogramme(dataFrame):
     )
     # Ajouter les étiquettes de texte
     hist.update_traces(texttemplate='%{y}', textposition='outside')
+
+    # Renommer la légende "count" sur l'axe y
+    hist.update_layout(yaxis_title_text='Nombre de communes')
 
     # Ajuster la marge supérieure
     hist.update_layout(margin=dict(t=10))
