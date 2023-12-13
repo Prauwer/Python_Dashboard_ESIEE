@@ -70,7 +70,7 @@ app.layout = html.Div(
                 ),
                 dcc.Graph(id="graph1"),
                 html.Div(
-                    children="Ce graphe montre le nombre de communes par tranche de loyer moyen. Les données contiennes les communes de métropole et d'outre-mer",
+                    children="Ce graphe montre le nombre de communes par tranche de loyer moyen. Les données contiennes les communes de métropole et d'outre-mer.",
                     style={"color": "#2b2b2b", "padding": "0.5em"},
                 ),
             ],
@@ -84,7 +84,7 @@ app.layout = html.Div(
         html.Div(
             children=[
                 html.H2(
-                    children="Carte du prix du loyer par département",
+                    children="Carte du prix du loyer par département. Les données contiennes les communes de métropole",
                     style={"color": "#2b2b2b"},
                 ),
                 html.Iframe(id="map1", style={"width": "100%", "height": "100vh"}),
