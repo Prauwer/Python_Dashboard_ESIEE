@@ -18,7 +18,7 @@ Les liens utilisés pour accéder aux données du site sont statiques et ne sero
 
   
 
-## Guide utilisateur
+## Guide utilisateur (TODO : décrire l'utilisation cf https://perso.esiee.fr/~courivad/3IPR2/depot.html ET TESTER REQUIREMENTS.TXT)
 
 Pour déployer le Dashboard, il est préférable que **Git** soit installé sur la machine cible. Ouvrez un terminal dans le dossier où vous voulez télécharger l'application puis tapez les quatre commandes suivantes :
 
@@ -26,9 +26,10 @@ Pour déployer le Dashboard, il est préférable que **Git** soit installé sur 
 
 git clone https://git.esiee.fr/mansouan/antoninzackarypythonminiproject.git
 
-cd antoninzackarypythonminiproject$
+cd antoninzackarypythonminiproject
 
-python -m pip install -r requirements.txt #celle-ci peut prendre un peu de temps à se terminer
+python -m pip install -r requirements.txt
+#cette ligne peut prendre un peu de temps à se terminer, veuillez bien patienter le téléchargement avant de lancer la suivante
 
 python main.py
 
@@ -85,3 +86,5 @@ B --> D{Rhombus}
 C --> D
 
 ```
+
+*Nous déclarons sur l’honneur que l'entièreté code fourni a été produit par nous mêmes*
