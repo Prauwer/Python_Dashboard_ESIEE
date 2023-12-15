@@ -56,21 +56,22 @@ Nous remarquons également grâce à la carte que les régions où le loyer est 
 On charge tout au début comme ça on change a volonté
 
 
-### Diagrammes
-
-#### (mermaid)
+### Diagramme d'appels de fonctions
 
 
 ```mermaid
-graph LR
+flowchart  TD
 
-A[Square Rect] -- Link text --> B((Circle))
+A(main.py)  -->  B(Data.py)
+A  -->  C(Map.py)
+A  -->  D(Histogramme.py)
+A  -->  J(app.layout)
 
-A --> C(Round Rect)
+B  -->  E["getDataFrame(url)"]
+C  -->  F["getMap(df)"]
+D  -->  G["getHistogramme(df)"]
 
-B --> D{Rhombus}
-
-C --> D
+H(@app.callback)  -->  I["update_datasource(map, graph)"]
 ```
 
 *Nous déclarons sur l’honneur que l'entièreté code fourni a été produit par nous mêmes.*
