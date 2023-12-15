@@ -4,6 +4,7 @@ from dash.dependencies import Input, Output
 
 from Histogramme import getHistogramme
 from Map import getMap
+from Data import getDataFrame
 
 app = dash.Dash(__name__)
 
@@ -17,12 +18,15 @@ DATA_URLS = {
 
 histograms = {}
 maps = {}
+
 for data_name, data_url in DATA_URLS.items():
-    histograms[data_name] = getHistogramme(data_url)
-    maps[data_name] = getMap(data_url)
+    dataFrame = getDataFrame(data_url)
+
+    histograms[data_name] = getHistogramme(dataFrame)
+    maps[data_name] = getMap(dataFrame)
 
 # Création du layout du dashboard.
-# Ici, on créer un objet Graph (l'histogramme ) et un objet Iframe (la carte), mais on les laisse vides.
+# Ici, on crée un objet Graph (l'histogramme) et un objet Iframe (la carte), mais on les laisse vides.
 app.layout = html.Div(
     children=[
         html.Div(
@@ -102,10 +106,10 @@ app.layout = html.Div(
 
 @app.callback(
     [
-        Output("graph1", "figure"), # on remplit l'attribut figure de l'objet d'id graph1 avec la première valeur retournée (ici histogram_figure)
-        Output("map1", "srcDoc"),   # on remplit l'attribut srcDoc de l'objet d'id map1 avec la deuxième valeur retournée (ici map_src_doc)
+        Output("graph1", "figure"), # On remplit l'attribut figure de l'objet d'id graph1 avec la première valeur retournée (ici histogram_figure)
+        Output("map1", "srcDoc"),   # On remplit l'attribut srcDoc de l'objet d'id map1 avec la deuxième valeur retournée (ici map_src_doc)
     ],
-    [Input("data-source", "value")], # On récupère la valeur sélectionné dans l'objet d'id data-source (un radio bouton)
+    [Input("data-source", "value")], # On récupère la valeur sélectionnée dans l'objet d'ID data-source (un radio bouton)
 )
 def update_data_source(selected_source):
     """Récupère la source de données choisis (appartement, maison, T1 et T2, T3 et +) et on remplit les objets Graph et Iframe.
