@@ -78,19 +78,6 @@ Si on veut ajouter un diagramme, il y a plusieurs étapes :
 
 ### Diagramme d'appels de fonctions
 
-```mermaid
-flowchart  TD
-
-A(main.py)  -->  B(Data.py)
-A  -->  C(Map.py)
-A  -->  D(Histogramme.py)
-A  -->  J(app.layout)
-
-B  -->  E["getDataFrame(url)"]
-C  -->  F["getMap(df)"]
-D  -->  G["getHistogramme(df)"]
-
-H(@app.callback)  -->  I["update_datasource(map, graph)"]
-```
+[![](https://mermaid.ink/img/pako:eNpVUMtOwzAQ_BVrT46U9gNyQNCGUpB6ghtGaLE3TYRjW44tVFX9d9YkIHqxrHns7M4ZtDcEDXTWf-keYxLipVVOuTs54uDW4VQJsVrdCLGRLSYsAJMLtpUHDNdQK_fDlPwx4jjSNfUkMYS1xZPPqSoZm4W4f1VwpFTm79hHMkdbKXhTbrsodrOC06TpZqpdqIeZ-pf6J1FuL29LpkZrP1B__t7yyJ4cDCZ65wcnn6MmPjjUgkeEvtihhpEil2C4nrNyQihIPY2koOGvoQ6zTQqUu7AUc_LPJ6ehSTFTvUxvBywrQdOhnRglMyQfD3PlP81fvgFimHod?type=png)](https://mermaid.live/edit#pako:eNpVUMtOwzAQ_BVrT46U9gNyQNCGUpB6ghtGaLE3TYRjW44tVFX9d9YkIHqxrHns7M4ZtDcEDXTWf-keYxLipVVOuTs54uDW4VQJsVrdCLGRLSYsAJMLtpUHDNdQK_fDlPwx4jjSNfUkMYS1xZPPqSoZm4W4f1VwpFTm79hHMkdbKXhTbrsodrOC06TpZqpdqIeZ-pf6J1FuL29LpkZrP1B__t7yyJ4cDCZ65wcnn6MmPjjUgkeEvtihhpEil2C4nrNyQihIPY2koOGvoQ6zTQqUu7AUc_LPJ6ehSTFTvUxvBywrQdOhnRglMyQfD3PlP81fvgFimHod)
 
 *Nous déclarons sur l’honneur que l'entièreté code fourni a été produit par nous mêmes.*
